@@ -6,4 +6,8 @@ class SessionsController < ApplicationController
     redirect_to '/login' if (params[:name].nil? || params[:name] == "")
     session[:name] = params[:name]
   end
+
+  def destroy
+    session.clear
+  end
 end
